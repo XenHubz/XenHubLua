@@ -70,7 +70,7 @@ end
 
 local initialexp = stats.experience
 
-output("WHITE|[|DARK_RED|XenBot|WHITE|] Spawning In...")
+output("WHITE|[|RED|XenBot|WHITE|] Spawning In...")
 
 network:send("spawn")
 
@@ -83,7 +83,7 @@ repeat fastwait(0.1)
 until (player.Character and player.Character:IsDescendantOf(workspace.Players)) or attempts >= 100
 
 if attempts < 100 then
-	output("PURPLE|[|RED|XenBot|PINK|] Spawned In. Getting Targets...")
+	output("WHITE|[|RED|XenBot|WHITE|] Spawned In. Getting Targets...")
     fastwait(2)
 	local validtargets, count = {}, 0
     for i, v in next, playertable do
@@ -94,7 +94,7 @@ if attempts < 100 then
 	for i, v in next, validtargets do
         if count == 3 or not (player.Character and player.Character:IsDescendantOf(workspace.Players)) then break end
         if playertable[i] then
-			output("PURPLE|[|WHITE|XenBot|PINK|] Target Found: " .. v.Name)
+			output("WHITE|[|WHITE|XenBot|WHITE|] Target Found: " .. v.Name)
             network:send("newgrenade", "FRAG", {
                 time = tick(),
 				blowuptime = 0,
@@ -130,7 +130,7 @@ output("WHITE|\n[|RED|XenBot|WHITE|] Teleporting To New Server...")
 
 player.OnTeleport:Connect(function(state)
     if state == Enum.TeleportState.Started then
-        (syn and syn.queue_on_teleport or queue_on_teleport)("loadstring(game:HttpGet('https://projectevo.xyz/releases/phantom_forces_autofarm.lua'))()")
+        (syn and syn.queue_on_teleport or queue_on_teleport)("loadstring(game:HttpGet('https://github.com/XenHubz/XenHubLua/blob/main/PhantomFarm.lua'))()")
     end
 end)
 
