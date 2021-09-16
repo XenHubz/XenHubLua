@@ -13,16 +13,6 @@ end
 
 rconsoleclear()
 
-output([[RED|======================================================
-
-|WHITE|[|RED|Credits|WHITE|] Xen AutoFarm
-
-|WHITE|[|RED|Credits|WHITE|] Made By Xen
-
-
-|RED|======================================================
-]])
-
 output("WHITE|[|BLUE|XenBot|WHITE|] Waiting For Game To Load...")
 
 repeat wait() until game:IsLoaded()
@@ -122,11 +112,11 @@ output("WHITE|[|GREEN|XenBot|WHITE|] Finished")
 local finaltime, finalexp = math.floor((tick() - starttime) * 100) / 100, stats.experience - initialexp
 local projectedexp = math.floor((finalexp / finaltime) * 3600)
 
-output("WHITE|\n[|LIGHT_RED|Stats|WHITE|] Time Taken: " .. finaltime .. " Seconds")
+output("WHITE|[|LIGHT_RED|Stats|WHITE|] Time Taken: " .. finaltime .. " Seconds")
 output("WHITE|[|LIGHT_RED|Stats|WHITE|] Experience Gained: " .. finalexp .. " Exp")
 output("WHITE|[|LIGHT_RED|Stats|WHITE|] Projected Earings: " .. projectedexp .. " Exp / Hour")
 
-output("WHITE|\n[|RED|XenBot|WHITE|] Teleporting To New Server...")
+output("WHITE|[|RED|XenBot|WHITE|] Teleporting To New Server...")
 
 player.OnTeleport:Connect(function(state)
     if state == Enum.TeleportState.Started then
